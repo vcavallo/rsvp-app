@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Attendees:</strong>
+  <ol>
+    <% @event.all_attendees.each do |attendee| %>
+      <li><%= attendee.name %></li>
+    <% end %>
+  </ol>
+</p>
+
+<%= link_to 'Add New Attendee', new_attendee_path %> <br>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
